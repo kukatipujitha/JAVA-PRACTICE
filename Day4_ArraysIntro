@@ -1,0 +1,80 @@
+arrays 
+
+-> it is a linear data structure
+-> used to stored multiple values(same type) in single variables
+
+
+type of arrays
+
+- single / one dimension => datatype [] arrayname;
+- two dimension array => datatype [][] arrayname
+- multi dimension array => dataype [][]....[n] arrayname
+
+
+eg: int[] arr = new int[5]
+String[] demo = {"abc", "sdf", "ert"}
+
+datatype[][] arrayName = new datatype[rows][columns];   
+int[][] arr = { { 1, 2 }, { 3, 4 } };  
+int[][] arr = new int[3][3];  
+
+------------
+to print arrays
+
+=> import java.util.Arrays;
+
+=> Arrays.toString(arr)
+
+------------
+
+static array 
+dynamic array
+
+------------
+indexing concept
+
+arr.length
+
+-------------
+
+for loop in one dimension 
+for loop on two dimension array
+
+-------------
+
+Advanced concept
+
+=>  jaggedArray
+
+eg:
+
+int[][] jaggedArray = {  
+    {1, 2, 3},  
+    {4, 5},  
+    {6, 7, 8, 9}  
+};  
+
+------------------------------------
+java example practice program 
+ 
+import java.util.Arrays; // importing class Arrays
+
+class Student {
+    public static void main(String[] args) {
+        int[] myArr = new int[3];                     // default values as Zeroes [0,0,0]
+        System.out.println(Arrays.toString(myArr));
+        myArr[0] = 10;
+        myArr[1] = 20;
+        // myArr[2] = 30;   value will not update so default 0         
+        System.out.println(Arrays.toString(myArr));   //output will be [10,20,0]
+        // System.out.println(myArr[5]);    throughs an error     ArrayIndexOutOfBoundaries  exception  because     index is 
+        
+        // second way
+        int[] arr = {10, 20, 30, 40, 50};
+        System.out.println(Arrays.toString(arr));   ///convert to string so that it prints
+        arr[0] = 100;
+         System.out.print("after updation : ");
+         System.out.println(Arrays.toString(arr));
+         System.out.println(arr.length);
+    }
+}
