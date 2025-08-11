@@ -114,4 +114,75 @@ enter the numbers of array
 even number in array are:[78]
 odd number in array are:[1, 45, 43, -5] 
 ===============================================
+//checking weather  Integer array is a polindrome are not with user input
+import java.util.Arrays;
+import java.util.Scanner;
+class main {
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter length of array");
+        int n=scan.nextInt();
+        int[] Array=new int[n];
+         System.out.println("enter elements of array");
+        for (int i=0;i<n;i++){
+            Array[i]=scan.nextInt();
+        }
+        int[] Arraycopy=Array.clone();
+        int temp=0;
+        for(int i=0;i<n/2;i++){
+            temp=Array[i];
+            Array[i]=Array[n-i-1];
+            Array[n-i-1]=temp;}
+            if (Arrays.equals(Array, Arraycopy)){
+                System.out.println("it is palindrome");
+            }
+            else{
+                System.out.println("it is not palindrome");
 
+            }
+        
+    }
+}
+------compiler output------------
+enter length of array
+4
+enter elements of array
+2 3 3 2
+it is polindrome
+================================
+//checking weather  String array is a polindrome are not with user input
+import java.util.Arrays;
+import java.util.Scanner;
+class main {
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter length of array");
+        int n=scan.nextInt();
+        String [] Array=new String [n];
+         System.out.println("enter elements of array");
+        for (int i=0;i<n;i++){
+            Array[i]=scan.next();
+        }
+        String[] Arraycopy=Array.clone();
+        String temp=" ";
+        for(int i=0;i<n/2;i++){
+            temp=Array[i];
+            Array[i]=Array[n-i-1];
+            Array[n-i-1]=temp;}
+            if (Arrays.equals(Array, Arraycopy)){
+                System.out.println("it is palindrome");
+            }
+            else{
+                System.out.println("it is not palindrome");
+
+            }
+        
+    }
+}
+----------compiler output-----------
+    enter length of array
+5
+enter elements of array
+m a d a m
+it is palindrome
+====================================================
