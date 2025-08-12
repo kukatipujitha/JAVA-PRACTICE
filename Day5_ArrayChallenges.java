@@ -186,3 +186,81 @@ enter elements of array
 m a d a m
 it is palindrome
 ====================================================
+ // program to find the missing number in a sorted array of consecutive integers
+ import java.util.Scanner;
+ import java.util.Arrays;
+ import java.util.ArrayList;
+ class Practice{
+     public static void main(String[] args){
+         Scanner s1=new Scanner(System.in);
+         System.out.println("enter the length of array");
+         int n=s1.nextInt();
+         System.out.println("enter the elements of array");
+         int[] Arr=new int[n];
+         for (int i=0;i<n;i++){
+             Arr[i]=s1.nextInt();
+         }
+         Arrays.sort(Arr);
+         System.out.println("sorted array:"+Arrays.toString(Arr));
+
+         for (int i = 0; i < n - 1; i++) {
+            if (Arr[i + 1] != Arr[i] + 1) {
+                
+                    System.out.println("missing letter is:"+(Arr[i]+1));
+                    
+                
+         }
+         
+         
+     }
+ }
+ }
+-----------compiler output----------
+enter the length of array
+9
+enter the elements of array
+8 2 4 7 5 9 10 1 3
+sorted array:[1, 2, 3, 4, 5, 7, 8, 9, 10]
+missing letter is:6
+==========================================================
+//program to find the elements that appear only once in array with user input
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Scanner;
+class main{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        System.out.println("enter the length of the array");
+        int n=scan.nextInt();
+        int[] arr=new int[n];
+        ArrayList <Integer> uniqueList=new ArrayList<>();
+        System.out.println("enter the elements of the array");
+
+        for (int i=0;i<n;i++){
+            arr[i]=scan.nextInt();
+        }
+        Arrays.sort(arr);
+        for (int i=0;i<n;i++){
+            boolean isOne=true;
+            for (int j=0;j<n;j++){
+                if(i!=j && arr[i]==arr[j] ){
+                    isOne=false;
+                    break;
+                }
+            }
+            
+        
+       if (isOne){
+           uniqueList.add(arr[i]);
+       } 
+    }
+    System.out.println("only once appeared elements are:"+uniqueList);
+}
+}
+-----------------compiler output-------
+enter the length of the array
+8
+enter the elements of the array
+1 3 4 5 6 7 3 5
+only once appeared elements are:[1, 4, 6, 7]
+==================================================
